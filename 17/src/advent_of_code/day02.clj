@@ -29,7 +29,6 @@
 (defn parse-spreadsheet [s]
   (->> s
        split-lines
-
        (map (comp #(split % #"[ \t]") trim))
        (map #(-> (map parse-int %)
                  vec))
